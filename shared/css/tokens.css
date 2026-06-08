@@ -1,0 +1,93 @@
+/* ============================================================
+   GRID SOLUÇÕES WEB — Design Tokens
+   Todas as variáveis do sistema de design em um só lugar.
+   Altere aqui para propagar por todo o projeto.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+:root {
+  /* ── Paleta Principal ── */
+  --terracota:        #8B3A1A;
+  --terracota-deep:   #6B2A0E;
+  --terracota-mid:    #A04A22;
+  --terracota-light:  #C06030;
+
+  --champagne:        #D4A96A;
+  --champagne-light:  #E8C98A;
+  --champagne-pale:   #F2DFB5;
+
+  --cream:            #F5EDD8;
+  --cream-dark:       #EAD9B8;
+  --off-white:        #FAF6EE;
+
+  --brown-dark:       #2C1810;
+  --brown-mid:        #4A2418;
+
+  --teal:             #2E7D6E;
+  --teal-light:       #3D9E8A;
+
+  --copper:           #B8603A;
+
+  /* ── Texto sobre Terracota ── */
+  --text-on-terra:        #F2DFB5;
+  --text-muted-on-terra:  rgba(242, 223, 181, 0.65);
+
+  /* ── Tipografia ── */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+  --font-elegant:  'Cormorant Garamond', Georgia, serif;
+
+  /* ── Escala de Tipo ── */
+  --text-xs:    0.65rem;
+  --text-sm:    0.75rem;
+  --text-base:  0.88rem;
+  --text-md:    1rem;
+  --text-lg:    1.15rem;
+  --text-xl:    1.3rem;
+  --text-2xl:   1.9rem;
+
+  /* ── Espaçamento ── */
+  --space-xs:   0.35rem;
+  --space-sm:   0.75rem;
+  --space-md:   1.25rem;
+  --space-lg:   2rem;
+  --space-xl:   3rem;
+  --space-2xl:  5rem;
+  --space-3xl:  6rem;
+
+  /* ── Border Radius ── */
+  --radius-sm:  2px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  18px;
+  --radius-full: 9999px;
+
+  /* ── Sombras ── */
+  --shadow-sm:  0 2px 8px rgba(44, 24, 16, 0.08);
+  --shadow-md:  0 8px 24px rgba(44, 24, 16, 0.12);
+  --shadow-lg:  0 24px 64px rgba(44, 24, 16, 0.16);
+  --shadow-xl:  0 40px 80px rgba(0, 0, 0, 0.5);
+
+  /* ── Transições ── */
+  --transition-fast:    0.15s ease;
+  --transition-base:    0.25s ease;
+  --transition-slow:    0.4s ease;
+
+  /* ── Z-index ── */
+  --z-base:     1;
+  --z-nav:      100;
+  --z-float:    200;
+  --z-modal:    300;
+
+  /* ── Container ── */
+  --container-max: 1200px;
+  --container-padding: 3rem;
+}
+
+/* ── Tipografia Base do Body ── */
+body {
+  font-family: var(--font-body);
+  background: var(--off-white);
+  color: var(--brown-dark);
+}

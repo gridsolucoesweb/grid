@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrato Assinado — Grid Soluções Web</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/tokens.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <style>
+    .obrigado {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--brown-dark);
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .obrigado .texture-overlay { opacity: 0.3; }
+    .obrigado-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .obrigado-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .obrigado h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      color: var(--champagne-pale);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+      position: relative;
+      z-index: 1;
+    }
+    .obrigado h1 em { font-style: italic; color: var(--champagne); }
+    .obrigado p {
+      font-family: var(--font-elegant);
+      font-size: 1.15rem;
+      color: rgba(242, 223, 181, 0.65);
+      max-width: 480px;
+      line-height: 1.7;
+      margin: 0 auto 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .payment-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 0.5px solid rgba(212, 169, 106, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .payment-box p {
+      font-size: var(--text-base);
+      color: rgba(212, 169, 106, 0.7);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="obrigado">
+    <div class="texture-overlay"></div>
+    <div class="obrigado-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>Contrato<br><em>assinado!</em></h1>
+    <p>Seja bem-vindo(a) à Grid. Seu contrato foi recebido com sucesso. O próximo passo é realizar o pagamento do setup para darmos início ao projeto.</p>
+    <div class="payment-box">
+      <p>Complete o pagamento do setup e da primeira mensalidade para iniciarmos o projeto.</p>
+      <!-- Fase 2: link do checkout Stripe aqui -->
+      <a href="../../checkout/" class="btn-primary" style="width: 100%; justify-content: center;">Realizar pagamento →</a>
+    </div>
+  </div>
+  <script src="../../shared/js/utils.js"></script>
+</body>
+</html>

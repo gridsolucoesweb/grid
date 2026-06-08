@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dara para Estética — Grid Soluções Web</title>
+  <meta name="description" content="Conheça a Dara Assistant e transforme o WhatsApp da sua clínica de estética em uma máquina de agendamentos.">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/tokens.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <style>
+    .coming-soon {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--terracota-deep), var(--terracota));
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .coming-soon .texture-overlay { opacity: 0.4; }
+    .coming-badge {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .coming-soon h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 500;
+      color: var(--champagne-pale);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .coming-soon h1 em { font-style: italic; color: var(--champagne); }
+    .coming-soon p {
+      font-family: var(--font-elegant);
+      font-size: 1.2rem;
+      color: var(--text-muted-on-terra);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="coming-soon">
+    <div class="texture-overlay"></div>
+    <p class="coming-badge">Em breve · Funil de Venda</p>
+    <h1>Funil<br><em>Dara Estética</em></h1>
+    <p>O funil completo de captação e conversão para clínicas de estética está sendo estruturado. Em breve disponível.</p>
+    <a href="../../site-institucional/#dara" class="btn-primary">Conhecer a Dara →</a>
+  </div>
+  <script src="../../shared/js/utils.js"></script>
+</body>
+</html>

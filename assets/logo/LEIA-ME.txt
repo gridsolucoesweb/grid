@@ -1,0 +1,10 @@
+Coloque aqui os arquivos de logo da Grid Soluções Web.
+
+Formatos recomendados:
+- logo-primary.svg       (versão principal, colorida, fundo transparente)
+- logo-dark.svg          (versão para fundos claros)
+- logo-light.svg         (versão para fundos escuros / terracota)
+- logo-icon.svg          (só o ícone/símbolo, sem texto)
+- logo-primary.png       (PNG 2x para uso em e-mails e documentos)
+- favicon.ico            (32x32, para o browser)
+- favicon.svg            (SVG para navegadores modernos)
