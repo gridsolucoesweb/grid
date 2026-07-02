@@ -400,6 +400,7 @@
     .dara-section {
       background: var(--brown-dark);
       padding: var(--space-3xl) var(--container-padding);
+      overflow: hidden;
     }
 
     .dara-inner {
@@ -460,6 +461,17 @@
       opacity: 0.7;
       flex-shrink: 0;
     }
+
+    .dara-mockup {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      margin: 0 auto calc(var(--space-3xl) * -1);
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+    }
+
+    .dara-inner > div:last-child { align-self: end; }
 
     /* RESULTS */
     .results-section {
@@ -583,6 +595,7 @@
       .services-grid { grid-template-columns: 1fr; }
       .approach-grid { grid-template-columns: 1fr; gap: 3rem; }
       .dara-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .dara-mockup { margin-bottom: -4rem; }
       .results-intro { grid-template-columns: 1fr; gap: 2rem; }
       .results-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -835,35 +848,7 @@
       <a href="#contato" class="btn-primary">Conhecer a Dara →</a>
     </div>
     <div class="fade-up" style="transition-delay: 0.15s">
-      <div class="chat-mockup">
-        <div class="chat-header">
-          <div class="chat-avatar"><span>D</span></div>
-          <div class="chat-info">
-            <p>Dara · Clínica Exemplo</p>
-            <span>● online agora</span>
-          </div>
-        </div>
-        <div class="chat-bubble bubble-received">
-          Olá! 😊 Sou a Dara, assistente digital da Clínica Exemplo. Posso ajudar com agendamento, dúvidas sobre procedimentos ou informações sobre planos de tratamento. Como posso te atender hoje?
-          <p class="bubble-time">09:14</p>
-        </div>
-        <div class="chat-bubble bubble-sent">
-          Quero agendar uma avaliação de microagulhamento.
-          <p class="bubble-time">09:15</p>
-        </div>
-        <div class="chat-bubble bubble-received">
-          Ótima escolha! Temos horários disponíveis esta semana. Você prefere manhã ou tarde? E me confirma seu nome completo para eu verificar seu histórico conosco. 🙏
-          <p class="bubble-time">09:15</p>
-        </div>
-        <div class="chat-bubble bubble-sent">
-          Tarde. Meu nome é Ana Carvalho.
-          <p class="bubble-time">09:16</p>
-        </div>
-        <div class="chat-bubble bubble-received">
-          Perfeito, Ana! Tenho quinta-feira às 15h e sexta às 14h30 disponíveis. Qual prefere? O procedimento dura aproximadamente 60 minutos. ✨
-          <p class="bubble-time">09:16</p>
-        </div>
-      </div>
+      <img class="dara-mockup" src="../assets/mockup-clinica.webp" alt="Conversa no WhatsApp entre uma paciente e a Dara, recepcionista digital da Grid, qualificando o atendimento de uma clínica" loading="lazy">
     </div>
   </div>
 </section>
