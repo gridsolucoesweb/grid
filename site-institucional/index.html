@@ -24,14 +24,7 @@
     /* HERO */
     .hero {
       min-height: 100vh;
-      background-image:
-        linear-gradient(100deg,
-          rgba(44, 24, 16, 0.92) 0%,
-          rgba(44, 24, 16, 0.72) 28%,
-          rgba(44, 24, 16, 0.35) 46%,
-          rgba(44, 24, 16, 0.05) 60%,
-          rgba(44, 24, 16, 0) 72%),
-        url('../assets/bg-site-grid-2-light-desktop.webp');
+      background-image: url('../assets/bg-site-grid-2-light-desktop.webp');
       background-size: cover;
       background-position: center right;
       background-repeat: no-repeat;
@@ -42,7 +35,10 @@
       overflow: hidden;
     }
 
-    .hero .texture-overlay { opacity: 0.4; }
+    .hero .texture-overlay { display: none; }
+    .hero .btn-primary { background: var(--terracota); color: var(--champagne-pale); }
+    .hero .btn-primary:hover { background: var(--terracota-mid); }
+    .hero .btn-ghost { color: var(--terracota); border-bottom-color: rgba(139, 58, 26, 0.45); }
 
     .hero-inner {
       max-width: var(--container-max);
@@ -62,7 +58,7 @@
       font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--champagne);
+      color: var(--brown-dark);
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
@@ -74,8 +70,8 @@
       display: block;
       width: 2.5rem;
       height: 1px;
-      background: var(--champagne);
-      opacity: 0.6;
+      background: var(--terracota);
+      opacity: 1;
       flex-shrink: 0;
     }
 
@@ -84,14 +80,14 @@
       font-size: clamp(3rem, 5.5vw, 5rem);
       font-weight: 500;
       line-height: 1.08;
-      color: var(--champagne-pale);
+      color: var(--brown-dark);
       margin-bottom: 1.5rem;
       letter-spacing: -0.01em;
     }
 
     .hero h1 em {
       font-style: italic;
-      color: var(--champagne);
+      color: var(--terracota);
     }
 
     .hero-desc {
@@ -99,7 +95,7 @@
       font-size: 1.2rem;
       font-weight: 300;
       line-height: 1.7;
-      color: var(--text-muted-on-terra);
+      color: var(--brown-mid);
       max-width: 480px;
       margin-bottom: 2.5rem;
     }
@@ -299,6 +295,13 @@
 
     .service-card:hover { background: var(--cream); }
     .service-card:hover::before { transform: scaleX(1); }
+
+    /* Preenche a célula vazia da grade (5 serviços em 3 colunas) na cor do
+       fundo e cobre as linhas internas adjacentes, para não parecer um card. */
+    .service-filler {
+      background: var(--off-white);
+      margin: -1.5px 0 0 -1.5px;
+    }
 
     .service-icon {
       width: 2.5rem;
@@ -563,17 +566,7 @@
         align-items: flex-start;
         background-image: url('../assets/bg-site-grid-2-light-mobile.webp');
         background-position: bottom center;
-        background-size: cover;
       }
-      .hero .texture-overlay { display: none; }
-      .hero-eyebrow { color: var(--brown-dark); }
-      .hero-eyebrow::before { background: var(--terracota); opacity: 1; }
-      .hero h1 { color: var(--brown-dark); }
-      .hero h1 em { color: var(--terracota); }
-      .hero-desc { color: var(--brown-mid); }
-      .hero .btn-ghost { color: var(--terracota); border-bottom-color: rgba(139, 58, 26, 0.45); }
-      .hero .btn-primary { background: var(--terracota); color: var(--champagne-pale); }
-      .hero .btn-primary:hover { background: var(--terracota-mid); }
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
 
       .services-section,
@@ -774,6 +767,7 @@
         <h3 class="service-name">Consultoria &amp; Diagnóstico</h3>
         <p class="service-desc">Sessão estratégica individual para identificar se a estrutura dos seus canais digitais estão travando o crescimento do seu negócio, com um plano de ação claro para implementação nos próximos 90 dias.</p>
       </div>
+      <div class="service-filler" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -919,7 +913,7 @@
       <p class="section-label section-label--light">Próximo passo</p>
       <h2 class="contact-title">Vamos conversar<br>sobre o seu <em>negócio</em></h2>
       <div class="divider divider--light"></div>
-      <p class="section-desc section-desc--light">O diagnóstico inicial é sem compromisso. Em 30 minutos, entendemos onde o digital está travando o seu crescimento e o que faz sentido fazer agora.</p>
+      <p class="section-desc section-desc--light">O diagnóstico inicial é sem compromisso. Em 30 minutos, entendemos onde a estrutura dos seus canais digitais estão travando o seu crescimento e quais soluções podemos propor.</p>
     </div>
     <form class="contact-form fade-up" style="transition-delay: 0.15s" onsubmit="handleSubmit(event)">
       <div class="form-row">
