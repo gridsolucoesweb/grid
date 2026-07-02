@@ -590,6 +590,16 @@
       .btn-submit.is-sending::after { animation-duration: 1.6s; }
     }
 
+    /* Logo (imagem) */
+    .nav-logo img { height: 30px; width: auto; display: block; }
+    .footer-brand img {
+      height: 30px;
+      width: auto;
+      display: block;
+      /* recolore a logo terracota para um tom claro sobre o rodapé escuro */
+      filter: brightness(0) invert(0.92) sepia(0.35) saturate(2.2) brightness(1.02);
+    }
+
     /* ── RESPONSIVO ── */
     @media (max-width: 900px) {
       .hero {
@@ -618,6 +628,7 @@
       .results-intro { grid-template-columns: 1fr; gap: 2rem; }
       .results-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-brand img { margin: 0 auto; }
     }
   </style>
 </head>
@@ -625,7 +636,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#inicio" class="nav-logo">Grid <span>Soluções</span> Web</a>
+  <a href="#inicio" class="nav-logo" aria-label="Grid Soluções Web — início"><img src="../assets/Logo_4.webp" alt="Grid Soluções Web"></a>
   <ul class="nav-links">
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#metodo">Método</a></li>
@@ -960,7 +971,7 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">Grid <span>Soluções</span> Web</div>
+      <div class="footer-brand"><img src="../assets/Logo_4.webp" alt="Grid Soluções Web"></div>
       <div class="footer-sub">Estratégia · Sites · Secretárias Digitais I.A para WhatsApp</div>
     </div>
     <ul class="footer-links">
