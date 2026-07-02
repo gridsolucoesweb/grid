@@ -39,27 +39,56 @@
 })();
 
 /* ── Form Submit Handler ── */
-function handleSubmit(e) {
+const LEAD_WEBHOOK_URL = 'https://hook.us1.make.com/gwn281os8gwrcmrld9fsdc1j1xi8yox2';
+
+async function handleSubmit(e) {
   if (e) e.preventDefault();
 
-  const nameInput  = document.querySelector('input[name="nome"], input[type="text"]');
-  const phoneInput = document.querySelector('input[name="whatsapp"], input[type="tel"]');
-  const emailInput = document.querySelector('input[name="email"], input[type="email"]');
-  const btn        = document.querySelector('.btn-submit');
+  const form = (e && e.target && e.target.tagName === 'FORM') ? e.target : document.querySelector('form');
+  if (!form) return;
+  const btn = form.querySelector('.btn-submit') || document.querySelector('.btn-submit');
 
-  if (!nameInput?.value || !phoneInput?.value || !emailInput?.value) {
+  // Coleta todos os campos nomeados do formulário
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  if (!data.nome || !data.whatsapp || !data.email) {
     alert('Por favor, preencha nome, WhatsApp e e-mail para continuar.');
     return;
   }
 
+  const payload = {
+    ...data,
+    origem: window.location.href,
+    enviado_em: new Date().toISOString(),
+  };
+
+  const btnTextOriginal = btn ? btn.textContent : '';
   if (btn) {
-    btn.textContent  = 'Enviado! Entraremos em contato em breve ✓';
-    btn.style.background = '#2E7D6E';
-    btn.style.color  = '#F2DFB5';
-    btn.disabled     = true;
+    btn.disabled    = true;
+    btn.textContent = 'Enviando…';
   }
 
-  // TODO: Fase 2 — integrar com webhook/API
+  try {
+    const res = await fetch(LEAD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+
+    form.reset();
+    if (btn) {
+      btn.textContent      = 'Enviado! Entraremos em contato em breve ✓';
+      btn.style.background = '#2E7D6E';
+      btn.style.color      = '#F2DFB5';
+    }
+  } catch (err) {
+    if (btn) {
+      btn.disabled    = false;
+      btn.textContent = btnTextOriginal || 'Quero meu diagnóstico →';
+    }
+    alert('Não foi possível enviar agora. Tente novamente em instantes ou fale conosco pelo WhatsApp.');
+  }
 }
 
 /* ── Smooth Anchor Scroll ── */
