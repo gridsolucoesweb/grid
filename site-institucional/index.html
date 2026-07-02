@@ -571,6 +571,25 @@
       gap: 1rem;
     }
 
+    /* Estado de envio do botão (spinner) */
+    .btn-submit.is-sending { cursor: progress; opacity: 0.9; }
+    .btn-submit.is-sending::after {
+      content: '';
+      display: inline-block;
+      width: 0.85em;
+      height: 0.85em;
+      margin-left: 0.6em;
+      vertical-align: -0.12em;
+      border: 2px solid currentColor;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: btn-spin 0.7s linear infinite;
+    }
+    @keyframes btn-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .btn-submit.is-sending::after { animation-duration: 1.6s; }
+    }
+
     /* ── RESPONSIVO ── */
     @media (max-width: 900px) {
       .hero {
@@ -961,6 +980,6 @@
   </svg>
 </a>
 
-<script src="../shared/js/utils.js?v=2"></script>
+<script src="../shared/js/utils.js?v=3"></script>
 </body>
 </html>

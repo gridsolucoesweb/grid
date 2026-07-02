@@ -64,9 +64,12 @@ async function handleSubmit(e) {
 
   const btnTextOriginal = btn ? btn.textContent : '';
   if (btn) {
-    btn.disabled    = true;
-    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+    btn.classList.add('is-sending');
+    btn.textContent = 'Enviando';
   }
+
+  const startedAt = Date.now();
 
   try {
     const res = await fetch(LEAD_WEBHOOK_URL, {
@@ -76,14 +79,21 @@ async function handleSubmit(e) {
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
 
+    // Garante que o estado "Enviando" fique visível por um tempo mínimo,
+    // para dar a sensação de processo mesmo quando a resposta é rápida.
+    const elapsed = Date.now() - startedAt;
+    if (elapsed < 900) await new Promise((r) => setTimeout(r, 900 - elapsed));
+
     form.reset();
     if (btn) {
+      btn.classList.remove('is-sending');
       btn.textContent      = 'Enviado! Entraremos em contato em breve ✓';
       btn.style.background = '#2E7D6E';
       btn.style.color      = '#F2DFB5';
     }
   } catch (err) {
     if (btn) {
+      btn.classList.remove('is-sending');
       btn.disabled    = false;
       btn.textContent = btnTextOriginal || 'Quero meu diagnóstico →';
     }
