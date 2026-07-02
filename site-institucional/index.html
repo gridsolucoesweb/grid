@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grid Soluções Web | Estratégia, Sites & Secretárias Digitais I.A para WhatsApp</title>
-  <meta name="description" content="Integramos estratégia, desenvolvimento de sites e Secretárias Digitais I.A para maximizar cada interação no WhatsApp da sua marca. Diagnóstico gratuito.">
+  <meta name="description" content="Integramos estratégia, desenvolvimento de sites e Secretárias Digitais I.A para maximizar cada interação no WhatsApp da sua marca. Diagnóstico sem compromisso.">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
@@ -184,6 +184,70 @@
       text-transform: uppercase;
       display: block;
       margin-top: 2px;
+    }
+
+    /* PROVA SOCIAL / MARCAS */
+    .brands {
+      padding: var(--space-2xl) 0;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .brands-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracota-light);
+      text-align: center;
+      margin: 0 var(--container-padding);
+    }
+
+    .brands-marquee {
+      position: relative;
+      margin-top: 2.75rem;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    }
+
+    .brands-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: brands-scroll 70s linear infinite;
+    }
+
+    .brands-marquee:hover .brands-track { animation-play-state: paused; }
+
+    .brand-logo {
+      height: 2.4rem;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      margin-right: 4.5rem;
+      flex-shrink: 0;
+      filter: grayscale(1);
+      opacity: 0.5;
+      transition: opacity var(--transition-base), filter var(--transition-base);
+    }
+
+    .brand-logo:hover { filter: grayscale(0); opacity: 1; }
+
+    @keyframes brands-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brands-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        padding: 0 var(--container-padding);
+      }
+      .brand-logo { margin: 0 1.75rem 2rem; }
+      .brand-logo[aria-hidden="true"] { display: none; }
     }
 
     /* SERVICES */
@@ -494,6 +558,8 @@
       .services-section,
       .approach-section,
       .results-section { padding: 4rem var(--container-padding); }
+      .brands { padding: 3.5rem 0; }
+      .brand-logo { height: 2rem; margin-right: 3rem; }
       .dara-section,
       .contact-section { padding: 4rem var(--container-padding); }
 
@@ -529,7 +595,7 @@
       <h1>A Nova Era da<br><em>Presença</em><br>Digital</h1>
       <p class="hero-desc">Integrando estratégia, desenvolvimento de sites e Secretárias Digitais I.A para maximizar cada interação no WhatsApp da sua marca, criando experiências de cliente fluidas e personalizadas para conversão acelerada.</p>
       <div class="hero-actions">
-        <a href="#contato" class="btn-primary">Quero meu diagnóstico gratuito →</a>
+        <a href="#contato" class="btn-primary">Quero meu diagnóstico →</a>
         <a href="#servicos" class="btn-ghost">Ver serviços</a>
       </div>
     </div>
@@ -573,6 +639,63 @@
     </div>
   </div>
 </div>
+
+<!-- PROVA SOCIAL / MARCAS (seção comentada, aguardando logos válidos) -->
+<!--
+<section class="brands" id="clientes" aria-label="Marcas que confiam na Grid">
+  <p class="brands-eyebrow">Marcas que confiam na Grid</p>
+  <div class="brands-marquee">
+    <div class="brands-track">
+      [Conjunto 1]
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_alpha-b.webp" alt="Alpha B" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_arqone.webp" alt="ArqOne" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_braconf-logo.webp" alt="Braconf" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_cogumelos-vale-verde.webp" alt="Cogumelos Vale Verde" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_cybertelecon.webp" alt="Cyber Telecom" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_home-sol-logo.webp" alt="Home Sol" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_karem-delbem-logo.webp" alt="Karem Delbem" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-brabca-cop.webp" alt="Branca Cop" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-gil-almeida-fonte-roxo.webp" alt="Gil Almeida" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-gw-cinza.webp" alt="GW" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-manutencao-preventiva.webp" alt="Manutenção Preventiva" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_Logo-Sprint-e1618258111417.webp" alt="Sprint" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_mt-auto-ctr.webp" alt="MT Auto Center" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_prado-cavalcante-log.webp" alt="Prado Cavalcante" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_sa-autopecas-logo.webp" alt="SA Autopeças" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_sorrilins.webp" alt="Sorrilins" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_sou_digital.webp" alt="Sou Digital" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_studio_aec_logotipo_rgb_3.webp" alt="Studio AEC" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_T4%20Solucoes%20industriais.webp" alt="T4 Soluções Industriais" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_umai-atlantica-editora.webp" alt="Umai Atlântica Editora" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_umai.webp" alt="Umai" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_Womanas_.webp" alt="Womanas" loading="lazy">
+      [Conjunto 2: duplicado, decorativo, para o loop contínuo]
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_alpha-b.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_arqone.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_braconf-logo.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_cogumelos-vale-verde.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_cybertelecon.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_home-sol-logo.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_karem-delbem-logo.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-brabca-cop.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-gil-almeida-fonte-roxo.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-gw-cinza.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_logo-manutencao-preventiva.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_Logo-Sprint-e1618258111417.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_mt-auto-ctr.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_prado-cavalcante-log.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_sa-autopecas-logo.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_sorrilins.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_sou_digital.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_studio_aec_logotipo_rgb_3.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_T4%20Solucoes%20industriais.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_umai-atlantica-editora.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_umai.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="brand-logo" src="../assets/uploads_files/logo_cliente_grid_Womanas_.webp" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </div>
+</section>
+-->
 
 <!-- SERVICES -->
 <section class="services-section" id="servicos">
@@ -661,7 +784,7 @@
           <div class="step-num">03</div>
           <div class="step-content">
             <h4>Desenvolvimento &amp; Entrega</h4>
-            <p>Execução ágil com comunicação clara em cada etapa. Você acompanha o progresso sem precisar cobrar atualização.</p>
+            <p>Execução que leva de 2 a 8 semanas, a depender do escopo do projeto, com comunicação clara em cada etapa. Você acompanha o progresso sem precisar cobrar atualização.</p>
           </div>
         </div>
         <div class="approach-step">
@@ -726,7 +849,8 @@
   </div>
 </section>
 
-<!-- RESULTS -->
+<!-- RESULTS (seção comentada temporariamente) -->
+<!--
 <section class="results-section" id="resultados">
   <div class="section-inner">
     <div class="results-intro fade-up">
@@ -762,6 +886,7 @@
     </div>
   </div>
 </section>
+-->
 
 <!-- CONTACT -->
 <section class="contact-section" id="contato">
@@ -771,7 +896,7 @@
       <p class="section-label section-label--light">Próximo passo</p>
       <h2 class="contact-title">Vamos conversar<br>sobre o seu <em>negócio</em></h2>
       <div class="divider divider--light"></div>
-      <p class="section-desc section-desc--light">O diagnóstico inicial é gratuito e sem compromisso. Em 30 minutos, entendemos onde o digital está travando o seu crescimento e o que faz sentido fazer agora.</p>
+      <p class="section-desc section-desc--light">O diagnóstico inicial é sem compromisso. Em 30 minutos, entendemos onde o digital está travando o seu crescimento e o que faz sentido fazer agora.</p>
     </div>
     <form class="contact-form fade-up" style="transition-delay: 0.15s" onsubmit="handleSubmit(event)">
       <div class="form-row">
@@ -803,7 +928,7 @@
         <label for="desafio">Qual é o principal desafio hoje?</label>
         <textarea id="desafio" name="desafio" placeholder="Conte um pouco sobre onde o digital está falhando no seu negócio..."></textarea>
       </div>
-      <button id="btn-submit" class="btn-submit" type="submit">Quero meu diagnóstico gratuito →</button>
+      <button id="btn-submit" class="btn-submit" type="submit">Quero meu diagnóstico →</button>
     </form>
   </div>
 </section>
