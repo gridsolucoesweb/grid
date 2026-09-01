@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
-      "destination": "/site-institucional/",
-      "permanent": false
+      "destination": "/landing-pages/grid-lp-func-dig-para-prestadora-de-servico/lp-principal-v1"
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "/landing-pages/grid-lp-func-dig-para-prestadora-de-servico/politica-de-privacidade"
+    },
+    {
+      "source": "/termos-de-uso",
+      "destination": "/landing-pages/grid-lp-func-dig-para-prestadora-de-servico/termos-de-uso"
     }
   ],
   "headers": [
